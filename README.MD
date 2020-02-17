@@ -23,6 +23,6 @@ React.js , GraphQL
 # babel 환경설정
 - 1. .babelrc 파일 생성
 - 2. .babelrc 파일에 코드 추가
-        - {
+        - { 
             "presets" : ["env","stage-3"]
         }
