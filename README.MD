@@ -1,5 +1,7 @@
 # > GraphQL 연습 <
-React.js , GraphQL
+- React.js , GraphQL, Apollo
+- RESTFul API의 Over Fetching, Under Fetching문제를 해결
+
 
 # install
 - yarn add graphql-yoga
@@ -26,3 +28,10 @@ React.js , GraphQL
         - { 
             "presets" : ["env","stage-3"]
         }
+
+
+
+# 스키마 생성
+- 스키마는 RESTFul API의 URLs 같은 역할
+    - 1. graphql/schema.graphql 파일 만들어주기
+
