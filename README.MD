@@ -20,7 +20,8 @@
                     }
     - yarn add babel-cli babel-preset-env babel-preset-stage-3 --dev
 
-
+- yarn add node-fetch
+    - axios, fetch 등 api fetch 도구
 
 # babel 환경설정
 - 1. .babelrc 파일 생성
@@ -39,4 +40,8 @@
 
 - Resolvers는 RESTFul API의 View 같은 역할
     - graphql/resolvers.js 파일 만들어 주기
+
+
+# fetch 
+- npm install
 
