@@ -1,25 +1,50 @@
-import fetch from "node-fetch";
-const API_URL = "https://yts.mx/api/v2/list_movies.json";
+// import fetch from "node-fetch";
+import axios from "axios";
+const BASE_URL = "https://yts.am/api/v2/"; //홈 URL
+const LIST_MOVIES_URL = `${BASE_URL}list_movies.json`; //영화 LIST URL
+const MOVIE_DETAILS_URL = `${BASE_URL}movie_details.json`; //상세보기 URL
+const MOVIE_SUGGESTIONS_URL = `${BASE_URL}movie_suggestions.json`; //
+//get 영화 1개
+export const getMovie = async id => {
+  const {
+    data: {
+      data: { movie }
+    }
+  } = await axios(MOVIE_DETAILS_URL, {
+    params: {
+      movie_id: id
+    }
+  });
 
-export const getMovies = (limit, rating) => {
-  let REQUEST_URL = API_URL;
-  if (limit > 0) {
-    REQUEST_URL += `?limit=${limit}`;
-  }
+  return movie;
+};
 
-  if (rating > 0) {
-    REQUEST_URL += `&minimum_rating=${rating}`;
-  }
-  console.log(REQUEST_URL);
+//get 영화들
+export const getMovies = async (limit, rating) => {
+  const {
+    data: {
+      data: { movies }
+    }
+  } = await axios(LIST_MOVIES_URL, {
+    params: {
+      limit,
+      minimum_rating: rating
+    }
+  });
+  return movies;
+};
 
-  return fetch(REQUEST_URL)
-    .then(function(res) {
-      return res.json(); //객체화하여 리턴
-    })
-    .then(function(json) {
-      return json.data.movies; //json data중 movies객체를 리턴
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
+//
+export const getSuggestions = async id => {
+  const {
+    data: {
+      data: { movies }
+    }
+  } = await axios(MOVIE_SUGGESTIONS_URL, {
+    params: {
+      movie_id: id
+    }
+  });
+  console.log(movies);
+  return movies;
 };
