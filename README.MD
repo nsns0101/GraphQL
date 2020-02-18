@@ -36,8 +36,7 @@
     - graphql/schema.graphql 파일 만들어주기
     - 뒤에 !를 붙이는 것은 null값을 리턴받지 않겠다는 의미
     - type는 model같은 느낌?
-    
+
 - Resolvers는 RESTFul API의 View 같은 역할
     - graphql/resolvers.js 파일 만들어 주기
 
-- 
