@@ -15,7 +15,7 @@
     - yarn global add babel-cli
         - js에서 require 대신 import문 사용할 수 있게 만들어 줌
                 - package.json 수정
-                    "scripts": {
+                    - "scripts": {
                         "start" : "nodemon --exec bable-node index.js"
                     }
     - yarn add babel-cli babel-preset-env babel-preset-stage-3 --dev
@@ -31,7 +31,13 @@
 
 
 
-# 스키마 생성
+# GraphQL 문법
 - 스키마는 RESTFul API의 URLs 같은 역할
-    - 1. graphql/schema.graphql 파일 만들어주기
+    - graphql/schema.graphql 파일 만들어주기
+    - 뒤에 !를 붙이는 것은 null값을 리턴받지 않겠다는 의미
+    - type는 model같은 느낌?
+    
+- Resolvers는 RESTFul API의 View 같은 역할
+    - graphql/resolvers.js 파일 만들어 주기
 
+- 

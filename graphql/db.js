@@ -1,35 +1,64 @@
-export const people = [
+export const movies = [
     {
         id: 0,
         name: "LeeJaeYoung",
-        age: 24,
-        gender: "male",
+        score: 24,
     },
     {
         id: 1,
         name: "jang",
-        age: 26,
-        gender: "male",
+        score: 26,
     },
     {
         id: 2,
         name: "kim",
-        age: 23,
-        gender: "male",
+        score: 23,
     },
     {
         id: 3,
         name: "lee",
-        age: 22,
-        gender: "male",
+        score: 22,
     },
 ];
 
-//요청한 id와 같은 id를 가진 객체정보를 리턴
-export const getById = (id, name) => {
-    console.log(id);
-    const filteredPeople = people.filter(
-        person => person.id === id && person.name === name
-    );
-    return filteredPeople[0];
+
+export const getMovies = () => {
+    return movies;
 }
+
+//요청한 id와 같은 id를 가진 객체정보를 리턴
+export const getById = (id) => {
+    // console.log(id);
+    const filteredMovies = movies.filter(
+        movie => movie.id === id
+    );
+    return filteredMovies[0];
+}
+
+export const deleteMovie = (id) => {
+    //요청한 id와 같지 않은 id를 가진 객체정보들을 리턴
+    const cleanedMovies = movies.filter(movie => movie.id != id);
+
+    //movies객체의 길이가 더 길면
+    if (movies.length > cleanedMovies.length) {
+        movie = cleanedMovies;
+        return true;
+    }
+    //movies와 cleanedMovies의 길이가 같으면(즉, 없는 id로 잘못 검색했으면)
+    else {
+        return false;
+    }
+}
+
+export const addMovie = (name, score) => {
+    const newMovie = {
+        id: movies.length + 1,
+        name,
+        score,
+    };
+    movies.push(newMovie);
+
+    return newMovie;
+}
+
+
