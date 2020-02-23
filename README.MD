@@ -24,6 +24,9 @@
   - axios로 대체
 - yarn add axios
 
+- yarn add styled-components react-router-dom
+- yarn add apollo-boost @apollo/react-hooks graphql
+
 # babel 환경설정
 
 - 1. .babelrc 파일 생성
