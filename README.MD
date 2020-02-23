@@ -42,7 +42,3 @@
 
 - Resolvers는 RESTFul API의 View 같은 역할
   - graphql/resolvers.js 파일 만들어 주기
-
-# fetch
-
-- npm install
