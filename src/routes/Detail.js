@@ -17,6 +17,10 @@ const GET_MOVIE = gql`
       rating
       description_intro
     }
+    suggestions(id: $id) {
+      id
+      medium_cover_image
+    }
   }
 `;
 
@@ -31,7 +35,7 @@ export default () => {
     variables: { id }
   });
   console.log(loading, data);
-  console.log(!loading && data.movie && "good");
+  //   console.log(!loading && data.movie && "good");
   return (
     <Container>
       <Column>
@@ -45,8 +49,12 @@ export default () => {
         )}
       </Column>
       <Poster
-        bg={data && data.movie ? data.movie.medium_cover_image : ""}
+        //data와 data.movie가 있으면 data.movie.medium_cover_image를 표시 아니면 ""를 표시
+        // bg={data && data.movie ? data.movie.medium_cover_image : ""}
+        bg={data?.movie?.medium_cover_image}
       ></Poster>
+      {/* {data && data.suggestions && data.suggestions.map(s=>)} */}
+      {/* {data?.suggestions?.map(s=>)} */}
     </Container>
   );
 };
