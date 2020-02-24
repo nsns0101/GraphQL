@@ -1,7 +1,28 @@
 # > GraphQL 연습 <
 
-- React.js , GraphQL, Apollo
+- React, React Hooks, GraphQL, Apollo
+- Apollo의 장점은 Cache를 가지고 있음(한번 로딩한 것은 다시 들어왔을 때 로딩하지않고 바로 보여줌)
 - RESTFul API의 Over Fetching, Under Fetching문제를 해결
+
+# 실행하기
+
+- 1. commit 기록에서 - back-end_setting_completed까지의 기록을 받아 압축풀고 실행(back-end 서버)
+- 2. 최근 commit한 것을 다운 받아 실행(front-end)
+
+# GraphQL 문법
+
+- a && b && c
+
+  - a와 b가 참이면 c를 실행
+
+* 스키마는 RESTFul API의 URLs 같은 역할
+
+  - graphql/schema.graphql 파일 만들어주기
+  - 뒤에 !를 붙이는 것은 null값을 리턴받지 않겠다는 의미
+  - type는 model같은 느낌?
+
+* Resolvers는 RESTFul API의 View 같은 역할
+  - graphql/resolvers.js 파일 만들어 주기
 
 # install
 
@@ -34,14 +55,3 @@
      - {
        "presets" : ["env","stage-3"]
        }
-
-# GraphQL 문법
-
-- 스키마는 RESTFul API의 URLs 같은 역할
-
-  - graphql/schema.graphql 파일 만들어주기
-  - 뒤에 !를 붙이는 것은 null값을 리턴받지 않겠다는 의미
-  - type는 model같은 느낌?
-
-- Resolvers는 RESTFul API의 View 같은 역할
-  - graphql/resolvers.js 파일 만들어 주기
